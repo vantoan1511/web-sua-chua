@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Liên Hệ</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.css">
+    <link rel="stylesheet" href="fontawesome/css/solid.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="trangchu.html">
+            <img src="images/logo.png" alt="logo" id="logo">
+        </a>
+        <img class="header-img1" src="images/header-img1.png" alt="">
+        <img class="header-img2" src="images/header-img2.png" alt="">
+        <img class="header-img3" src="images/header-img3.png" alt="">
+        <nav class="header-nav">
+            <a href="trangchu.html">Trang Chủ</a>
+            <a href="gioithieu.html">Giới Thiệu</a>
+            <a href="sanpham.html">Sản Phẩm</a>
+            <a href="tintuc.html">Tin Tức</a>
+            <a href="dangnhap.html">Đăng Nhập</a>
+            <a href="dangky.html">Đăng Ký</a>
+            <a href="lienhe.html">Liên Hệ</a>
+        </nav>
+        <div class="header-search">
+            <form onsubmit="return send()" id="form" action="timkiem.html" method="get">
+                <input onkeypress="return isEnter(event)" id="search-txt" type="text" name="txt" placeholder="Nhập nội dung cần tìm...">
+                <i class="fa-solid fa-search" id="search-button" onclick="send()"></i>
+                <i class="fa-solid fa-cart-shopping" id="cart-shopping" onclick="toCart()"></i>
+            </form>
+        </div>
+    </header>
+    <main>
+        <article>
+            <h1>Liên hệ</h1>
+            <div class="address">
+                <i class="fa-solid fa-location-dot"></i>
+                <b>Địa chỉ: 0123, Tòa Nhà ABC, TP. Cần Thơ</b>
+                Nếu bạn có góp ý, vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu mẫu bên dưới. Xin cám ơn.
+            </div>
+            <div>
+                <form onsubmit="return frmValidate5(this)" action="" method="post"
+                    enctype="application/x-www-form-urlencoded">
+                    <fieldset>
+                        <table class="contact-table">
+                            <tr>
+                                <td>
+                                    <label for="name">
+                                        <i class="fa-solid fa-user"></i>
+                                    </label>
+                                </td>
+                                <td>
+                                    <input required id="name" type="text" name="name" placeholder="Vui lòng nhập Họ tên của bạn"
+                                        pattern=".{4,}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="email">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </label>
+                                </td>
+                                <td>
+                                    <input required id="email" type="email" name="email" placeholder="Vui lòng nhập địa chỉ Email"
+                                        pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="cd">
+                                        <i class="fa-solid fa-bars"></i>
+                                    </label>
+                                </td>
+                                <td>
+                                    <select name="cd" id="cd" size="1">
+                                        <option value="1">Về Sản Phẩm/ Dịch Vụ</option>
+                                        <option value="2">Về Ưu Đãi Thành Viên</option>
+                                        <option value="3">Về Tin Tuyển Dụng</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <i class="fa-solid fa-file"></i>
+                                </td>
+                                <td>
+                                    <textarea required minlength="10" name="content" id="content" cols="50" rows="7"
+                                        placeholder="Nội dung cần liên hệ" pattern=".{10,}"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" value="Gửi">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </form>
+            </div>
+
+        </article>
+    </main>
+    <footer>
+        &copy; 2021 Bản quyền thuộc về FreeezeVN.
+        <a class="fa-brands fa-facebook" href=""></a>
+        <a class="fa-brands fa-twitter" href=""></a>
+        <a class="fa-brands fa-pinterest" href=""></a>
+        <a href="#logo" title="Về đầu trang">
+            <img class="scroll-to-top" src="images/top.png" alt="">
+        </a>
+    </footer>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>

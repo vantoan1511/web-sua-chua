@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.css">
+    <link rel="stylesheet" href="fontawesome/css/solid.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="trangchu.html">
+            <img src="images/logo.png" alt="logo" id="logo">
+        </a>
+        <img class="header-img1" src="images/header-img1.png" alt="">
+        <img class="header-img2" src="images/header-img2.png" alt="">
+        <img class="header-img3" src="images/header-img3.png" alt="">
+        <nav class="header-nav">
+            <a href="trangchu.html">Trang Chủ</a>
+            <a href="gioithieu.html">Giới Thiệu</a>
+            <a href="sanpham.html">Sản Phẩm</a>
+            <a href="tintuc.html">Tin Tức</a>
+            <a href="dangnhap.html">Đăng Nhập</a>
+            <a href="dangky.html">Đăng Ký</a>
+            <a href="lienhe.html">Liên Hệ</a>
+        </nav>
+        <div class="header-search">
+            <form onsubmit="return send()" id="form" action="timkiem.html" method="get">
+                <input onkeypress="return isEnter(event)" id="search-txt" type="text" name="txt" placeholder="Nhập nội dung cần tìm...">
+                <i class="fa-solid fa-search" id="search-button" onclick="send()"></i>
+                <i class="fa-solid fa-cart-shopping" id="cart-shopping" onclick="toCart()"></i>
+            </form>
+        </div>
+    </header>
+    <main>
+        <article>
+            <h1>ĐĂNG KÝ</h1>
+            <form onsubmit="return frmValidate5(this)" action="" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <table class="signup-table">
+                        <tr>
+                            <td>
+                                <label for="email">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </label>
+                            </td>
+                            <td>
+                                <input required id="email" type="email" name="email" placeholder="Vui lòng nhập email"
+                                    pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="psw">
+                                    <i class="fa-solid fa-key"></i>
+                                </label>
+                            </td>
+                            <td>
+                                <input required id="psw" type="password" minlength="8" name="psw" placeholder="Vui lòng nhập mật khẩu"
+                                    pattern=".{8,}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="psw2">
+                                    <i class="fa-solid fa-key"></i>
+                                </label>
+                            </td>
+                            <td>
+                                <input required id="psw2" type="password" minlength="8" name="psw2" placeholder="Vui lòng nhập mật khẩu"
+                                    pattern=".{8,}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="memberType">
+                                    <i class="fa-solid fa-users-line"></i>
+                                </label>
+                            </td>
+                            <td>
+                                <input id="memberType" type="radio" name="memberType" value="bac">Bạc
+                                <input id="memberType" type="radio" name="memberType" value="vang">Vàng
+                                <input id="memberType" type="radio" name="memberType" value="bk">Bạch Kim
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="file">
+                                    <i class="fa-solid fa-user"></i>
+                                </label>
+                            </td>
+                            <td>
+                                <input id="file" type="file">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Thông qua việc tạo tài khoản, bạn đồng ý với
+                                <a href="">Điều khoản & Quyền riêng tư</a>
+                                của chúng tôi.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="reset" value="Hủy">
+                                <input type="submit" value="Đăng Ký">
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </article>
+    </main>
+    <footer>
+        &copy; 2021 Bản quyền thuộc về FreeezeVN.
+        <a class="fa-brands fa-facebook" href=""></a>
+        <a class="fa-brands fa-twitter" href=""></a>
+        <a class="fa-brands fa-pinterest" href=""></a>
+        <a href="#logo" title="Về đầu trang">
+            <img class="scroll-to-top" src="images/top.png" alt="">
+        </a>
+    </footer>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
