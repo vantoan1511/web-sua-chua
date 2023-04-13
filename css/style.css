@@ -1,3 +1,66 @@
+.container {
+    position: fixed;
+    border: 1 solid red;
+    border-radius: 5px;
+    padding: 0 5px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 0 5px 0 #00000066, 0 0 5px 0 #0000004d;
+}
+
+.adsvercontainer {
+    left: 0;
+    top: 10px;
+    height: 300px;
+}
+
+.adsvertext {
+    white-space: wrap;
+}
+
+.adstext {
+    position: absolute;
+    left: 5px;
+}
+
+.adshorcontainer {
+    bottom: 50px;
+    height: 50px;
+}
+
+.adshortext {
+    white-space: nowrap;
+}
+
+#headline{
+    position: relative;
+    margin: 0 auto;
+    padding: 10px;
+    width: 1035px;
+    height: 300px;
+}
+
+#headline div{
+    position: relative;
+    margin: 0 auto;
+}
+
+#headline div img{
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#headline div span{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    padding: 0 5px;
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: white;
+    z-index: 10;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -23,7 +86,7 @@ header {
     border-radius: 5px;
     padding: 0 5px;
     height: 100px;
-    background-image: url("/images/header.png");
+    background-image: url('/images/header.png');
 }
 
 nav {
@@ -399,7 +462,7 @@ footer a {
     color: #ed4190;
     text-align: center;
     background-color: #cddc39;
-    
+
 }
 
 /* animation */
