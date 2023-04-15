@@ -26,6 +26,9 @@ function frmValidate5(frm) {
     return frm.checkValidity();
 }
 
+
+// gio hang 
+
 var itemList = {
     "sp001": {
         "name": "Sữa chua vị Kiwi",
@@ -76,16 +79,17 @@ var itemList = {
 
 function addCart(code) {
     var number = parseInt(document.getElementById(code).value);
-    if (typeof localStorage[code] === "undefined") {
-        window.localStorage.setItem(code, number);
-    }
-    else {
-        var current = parseInt(localStorage.getItem(code));
-        if (number + current > 100)
-            window.localStorage.setItem(code, 100);
-        else
-            window.localStorage.setItem(code, number + current);
-    }
+    if (number > 0)
+        if (typeof localStorage[code] === "undefined") {
+            window.localStorage.setItem(code, number);
+        }
+        else {
+            var current = parseInt(localStorage.getItem(code));
+            if (number + current > 100)
+                window.localStorage.setItem(code, 100);
+            else
+                window.localStorage.setItem(code, number + current);
+        }
     console.log(localStorage);
 
 }
@@ -138,7 +142,7 @@ function showCart() {
         tableBody.appendChild(tr);
         TotalPreTax = TotalPreTax + (price * orderNumber);
 
-        
+
     }
     var tongtt = document.getElementById("tong-thanh-tien");
     tongtt.innerText = tongtt.innerText + " " + TotalPreTax + " VND";
