@@ -18,8 +18,8 @@ function send() {
 document.addEventListener('DOMContentLoaded', function () {
     var searchParams = new URLSearchParams(window.location.search);
     var searchQuery = searchParams.get('txt');
-
-    document.getElementById('search-result').textContent = 'Kết quả tìm kiếm cho: ' + searchQuery;
+    if (searchQuery != null)
+        document.getElementById('search-result').textContent = 'Kết quả tìm kiếm cho: ' + searchQuery;
 })
 
 function frmValidate5(frm) {
@@ -94,7 +94,9 @@ function toCart() {
     window.location.href = "donhang.html";
 }
 
-window.addEventListener("load", showCart);
+document.addEventListener("DOMContentLoaded", function () {
+    showCart();
+})
 
 window.onstorage = () => {
     location.reload();
@@ -103,11 +105,13 @@ window.onstorage = () => {
 
 function showCart() {
     var TotalPreTax = 0;
-    for (var code in localStorage) {
+    var keys = Object.keys(localStorage);
+    for (var i = 0; i < keys.length; i++) {
+        var code = keys[i];
         var item = itemList[code];
-        var photo = item.photo;
         var name = item.name;
         var price = item.price;
+        var photo = item.photo;
         var orderNumber = localStorage.getItem(code);
 
         var hinhsp = document.createElement("td");
@@ -134,23 +138,25 @@ function showCart() {
         tableBody.appendChild(tr);
         TotalPreTax = TotalPreTax + (price * orderNumber);
 
-        var tongtt = document.getElementById("tong-thanh-tien");
-        tongtt.innerHTML = tongtt.innerHTML + TotalPreTax + " VND";
-        var chietk = document.getElementById("chiet-khau");
-        var discount = TotalPreTax * getDiscountRate();
-        chietk.innerHTML = chietk.innerHTML + getDiscountRate() + ' x A = ' + discount + ' VND';
-        var thue = document.getElementById("thue");
-        var tax = 0.1 * (TotalPreTax - discount);
-        thue.innerHTML = thue.innerHTML + tax + ' VND';
-        var tongdh = document.getElementById("tong-don-hang");
-        tongdh.innerHTML = tongdh.innerHTML + (TotalPreTax - discount + tax) + ' VND';
+        
     }
+    var tongtt = document.getElementById("tong-thanh-tien");
+    tongtt.innerText = tongtt.innerText + " " + TotalPreTax + " VND";
+    var chietk = document.getElementById("chiet-khau");
+    var discount = TotalPreTax * getDiscountRate();
+    chietk.innerHTML = chietk.innerHTML + getDiscountRate() + ' x A = ' + discount + ' VND';
+    var thue = document.getElementById("thue");
+    var tax = 0.1 * (TotalPreTax - discount);
+    thue.innerHTML = thue.innerHTML + tax + ' VND';
+    var tongdh = document.getElementById("tong-don-hang");
+    tongdh.innerHTML = tongdh.innerHTML + (TotalPreTax - discount + tax) + ' VND';
 }
 
 function removeCart(code) {
     if (typeof window.localStorage[code] != "undefined") {
         window.localStorage.removeItem(code);
         document.getElementById("order-table").getElementsByTagName('tbody')[0].innerHTML = "";
+        location.reload();
         showCart();
     }
 }
@@ -209,21 +215,21 @@ $(document).ready(function () {
     var headlineContent = [
         {
             'title': 'Bánh flan sữa chua sự kết hợp hoàn hảo',
-            'photo': '/images/trangchu/headline/headline1.jpg'
+            'photo': 'images/trangchu/headline/headline1.jpg'
         },
         {
             'title': 'Sữa chua nhà làm từ sữa dê - đậm đà hương vị khó quên',
-            'photo': '/images/trangchu/headline/headline2.jpg'
+            'photo': 'images/trangchu/headline/headline2.jpg'
         },
         {
             'title': ' Thưởng thức sữa chua theo cách của bạn',
-            'photo': '/images/trangchu/headline/headline3.jpg'
+            'photo': 'images/trangchu/headline/headline3.jpg'
         }
     ];
 
     var divContent = new Array();
     var divHeadline = $('#headline');
-    
+
     function init() {
 
         for (var i = 0; i < headlineContent.length; i++) {
@@ -243,10 +249,9 @@ $(document).ready(function () {
         setInterval(function () {
             var firstElement = divContent.shift();
             firstElement.hide();
+            var nextElement = divContent[divContent.indexOf(firstElement) + 1];
+            nextElement.show(1000);
             divContent.push(firstElement);
-            var nextElement = divContent.shift();
-            nextElement.show(1000);                                               
-            divContent.push(nextElement);
         }, 5000);
     }
 

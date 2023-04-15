@@ -32,25 +32,26 @@
     white-space: nowrap;
 }
 
-#headline{
+#headline {
     position: relative;
     margin: 0 auto;
     padding: 10px;
-    width: 1035px;
+    width: 1024px;
     height: 300px;
 }
 
-#headline div{
+#headline div {
     position: relative;
     margin: 0 auto;
 }
 
-#headline div img{
+#headline div img {
+    width: 100%;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-#headline div span{
+#headline div span {
     position: absolute;
     left: 10px;
     bottom: 10px;
@@ -86,7 +87,7 @@ header {
     border-radius: 5px;
     padding: 0 5px;
     height: 100px;
-    background-image: url('/images/header.png');
+    background-image: url("../images/header.png");
 }
 
 nav {
@@ -376,7 +377,6 @@ fieldset {
 .login-table {
     align-self: center;
 }
-
 
 
 td img {
